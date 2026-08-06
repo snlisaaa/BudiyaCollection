@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-gold: #a21c26;
+  --color-brand-gold-hover: #8c141d;
+  --color-brand-cream: #fcf9f9;
+  --color-brand-cream-dark: #f5e8e9;
+  --color-brand-dark: #1f1212;
+  --color-brand-charcoal: #2b1d1d;
+  --color-brand-sand: #e6d3d4;
+  --color-brand-rose: #d67e83;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Outfit", "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-brand-cream text-brand-dark transition-colors duration-300;
+  }
+  
+  /* Apply dark class override */
+  .dark body {
+    @apply bg-brand-dark text-brand-cream;
+  }
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #a21c2640;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a21c2660;
+}
